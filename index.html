@@ -20,7 +20,6 @@
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -63,6 +62,7 @@
       gap: 12px;
       font-weight: 800;
       letter-spacing: -0.03em;
+      text-decoration: none;
     }
 
     .brand-mark {
@@ -94,9 +94,7 @@
 
     .nav-links a:hover { opacity: 1; }
 
-    .hero {
-      padding: 84px 0 58px;
-    }
+    .hero { padding: 84px 0 58px; }
 
     .hero-grid {
       display: grid;
@@ -303,7 +301,10 @@
       line-height: 1;
     }
 
-    .highlight p { color: rgba(255,255,255,0.76); margin: 0; }
+    .highlight p {
+      color: rgba(255,255,255,0.76);
+      margin: 0;
+    }
 
     .samples-grid {
       display: grid;
@@ -476,7 +477,8 @@
       color: rgba(255,255,255,0.78);
     }
 
-    input, textarea {
+    input,
+    textarea {
       width: 100%;
       border: 1px solid rgba(255,255,255,0.16);
       border-radius: 14px;
@@ -488,9 +490,15 @@
       outline: none;
     }
 
-    textarea { min-height: 130px; resize: vertical; }
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
 
-    input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.48); }
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(255,255,255,0.48);
+    }
 
     .send {
       width: 100%;
@@ -537,6 +545,7 @@
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="wrap nav">
@@ -566,6 +575,7 @@
             <a class="btn ghost" href="mailto:?subject=Intro%20Call%20with%20Ally">Send Me An Email</a>
           </div>
         </div>
+
         <aside class="profile-card" aria-label="Profile summary">
           <div class="profile-mark" aria-hidden="true">ASL</div>
           <h2>AI, websites, content, and creative support for tourism brands.</h2>
@@ -580,6 +590,7 @@
           <h2>Services</h2>
           <p>Flexible creative and technical support for tourism, nonprofits, and small teams that need smart, practical execution.</p>
         </div>
+
         <div class="services">
           <div class="service"><span>+</span> Artificial Intelligence Consulting</div>
           <div class="service"><span>+</span> Website Builds + Rebuilds, Shopify + Squarespace</div>
@@ -606,6 +617,7 @@
             <p><strong>The Brief:</strong> Produce an AI-generated keynote speaker, including script, avatar, voice, and PowerPoint visuals for USTOA’s annual conference.</p>
             <p class="client">Client: United States Tour Operators Association (USTOA)</p>
           </a>
+
           <a class="sample-card featured" href="https://meaningfulmarketinghouse.com/" target="_blank" rel="noopener">
             <span class="tag">AI Work Sample</span>
             <h3>Lifelike historical avatar</h3>
@@ -625,11 +637,13 @@
             <h3>Video Avatars</h3>
             <p>Lifelike, full-body avatars that speak, gesture, and express emotion. Use for course intros, CEO messages, campaign launches, fictional hosts, and immersive storytelling.</p>
           </article>
+
           <article class="solution">
             <div class="num">2</div>
             <h3>Photo Avatars</h3>
             <p>Turn a single photo into a moving, talking avatar for social media snippets, internal updates, donor thank-yous, and quick video briefs.</p>
           </article>
+
           <article class="solution">
             <div class="num">3</div>
             <h3>Interactive Avatars</h3>
@@ -684,15 +698,18 @@
           <p>Whether you’re looking for a Shopify or Squarespace site build, graphic design and video services, or a second set of eyes to audit your website, I’d love to hear more.</p>
           <a class="btn primary" href="mailto:?subject=Website%20or%20AI%20Project%20Inquiry">Send Me An Email</a>
         </div>
-        <form action="mailto:?subject=Website%20or%20AI%20Project%20Inquiry" method="post" enctype="text/plain">
+
+        <form action="https://formspree.io/f/xykqjnrp" method="POST">
+          <input type="hidden" name="_subject" value="New website inquiry from Ally Stoltz LaBriola site" />
+
           <label for="name">Name</label>
-          <input id="name" name="name" type="text" placeholder="Your name" />
+          <input id="name" name="name" type="text" placeholder="Your name" required />
 
           <label for="email">Email</label>
-          <input id="email" name="email" type="email" placeholder="you@example.com" />
+          <input id="email" name="email" type="email" placeholder="you@example.com" required />
 
           <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Tell me what you’re working on..."></textarea>
+          <textarea id="message" name="message" placeholder="Tell me what you’re working on..." required></textarea>
 
           <button class="send" type="submit">SEND</button>
         </form>
