@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Ally Stoltz LaBriola | Technology + Tourism</title>
   <meta name="description" content="Website work, graphic design, video production, and AI-powered solutions for tourism and mission-driven organizations." />
+
   <style>
     :root {
       --charcoal: #171717;
@@ -19,8 +21,13 @@
       --radius: 22px;
     }
 
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
@@ -32,7 +39,9 @@
       line-height: 1.6;
     }
 
-    a { color: inherit; }
+    a {
+      color: inherit;
+    }
 
     .wrap {
       width: min(1120px, calc(100% - 38px));
@@ -69,14 +78,20 @@
       width: 44px;
       height: 44px;
       border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, var(--blue), var(--turquoise));
-      color: white;
+      overflow: hidden;
+      display: block;
       border: 2px solid var(--turquoise);
-      font-size: 13px;
-      font-weight: 950;
-      letter-spacing: -0.02em;
+      box-shadow: 0 6px 18px rgba(23, 23, 23, 0.12);
+      flex-shrink: 0;
+    }
+
+    .brand-mark img,
+    .profile-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
     }
 
     .nav-links {
@@ -92,9 +107,13 @@
       opacity: 0.78;
     }
 
-    .nav-links a:hover { opacity: 1; }
+    .nav-links a:hover {
+      opacity: 1;
+    }
 
-    .hero { padding: 84px 0 58px; }
+    .hero {
+      padding: 84px 0 58px;
+    }
 
     .hero-grid {
       display: grid;
@@ -211,21 +230,16 @@
     }
 
     .profile-mark {
-      width: 100%;
-      max-width: 280px;
+      width: min(340px, 86vw);
       aspect-ratio: 1 / 1;
-      display: grid;
-      place-items: center;
       margin: 0 auto 24px;
-      border-radius: 28px;
+      border-radius: 50%;
+      overflow: hidden;
       background: rgba(255, 255, 255, 0.13);
-      border: 5px solid rgba(33, 199, 201, 0.82);
+      border: 6px solid rgba(33, 199, 201, 0.9);
       position: relative;
       z-index: 1;
-      font-size: clamp(58px, 8vw, 92px);
-      font-weight: 950;
-      letter-spacing: -0.09em;
-      color: white;
+      box-shadow: 0 18px 34px rgba(0, 0, 0, 0.2);
     }
 
     .profile-card h2 {
@@ -243,7 +257,9 @@
       color: rgba(255, 255, 255, 0.76);
     }
 
-    section { padding: 58px 0; }
+    section {
+      padding: 58px 0;
+    }
 
     .section-title {
       display: flex;
@@ -283,7 +299,9 @@
       box-shadow: 0 10px 30px rgba(23, 23, 23, 0.05);
     }
 
-    .service span { color: var(--blue); }
+    .service span {
+      color: var(--blue);
+    }
 
     .highlight {
       background: linear-gradient(145deg, #0b416c 0%, #1769aa 52%, #21c7c9 135%);
@@ -302,7 +320,7 @@
     }
 
     .highlight p {
-      color: rgba(255,255,255,0.76);
+      color: rgba(255, 255, 255, 0.76);
       margin: 0;
     }
 
@@ -367,14 +385,18 @@
       color: var(--muted);
     }
 
-    .featured p { color: rgba(255,255,255,0.75); }
+    .featured p {
+      color: rgba(255, 255, 255, 0.75);
+    }
 
     .client {
       font-weight: 900;
       color: var(--charcoal);
     }
 
-    .featured .client { color: white; }
+    .featured .client {
+      color: white;
+    }
 
     .solutions {
       display: grid;
@@ -401,8 +423,14 @@
       margin-bottom: 16px;
     }
 
-    .solution h3 { margin: 0 0 8px; }
-    .solution p { color: var(--muted); margin: 0; }
+    .solution h3 {
+      margin: 0 0 8px;
+    }
+
+    .solution p {
+      color: var(--muted);
+      margin: 0;
+    }
 
     .client-list {
       display: grid;
@@ -474,15 +502,15 @@
       font-size: 13px;
       font-weight: 850;
       margin-bottom: 7px;
-      color: rgba(255,255,255,0.78);
+      color: rgba(255, 255, 255, 0.78);
     }
 
     input,
     textarea {
       width: 100%;
-      border: 1px solid rgba(255,255,255,0.16);
+      border: 1px solid rgba(255, 255, 255, 0.16);
       border-radius: 14px;
-      background: rgba(255,255,255,0.1);
+      background: rgba(255, 255, 255, 0.1);
       color: white;
       padding: 13px 14px;
       margin-bottom: 14px;
@@ -497,7 +525,7 @@
 
     input::placeholder,
     textarea::placeholder {
-      color: rgba(255,255,255,0.48);
+      color: rgba(255, 255, 255, 0.48);
     }
 
     .send {
@@ -515,9 +543,9 @@
     footer {
       padding: 24px 0;
       background: var(--charcoal);
-      color: rgba(255,255,255,0.58);
+      color: rgba(255, 255, 255, 0.58);
       font-size: 13px;
-      border-top: 1px solid rgba(255,255,255,0.1);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     footer .wrap {
@@ -537,11 +565,25 @@
         grid-template-columns: 1fr;
       }
 
-      .hero { padding-top: 54px; }
-      .section-title { display: block; }
-      .section-title p { margin-top: 12px; }
-      .nav-links { display: none; }
-      .profile-mark { max-width: 220px; }
+      .hero {
+        padding-top: 54px;
+      }
+
+      .section-title {
+        display: block;
+      }
+
+      .section-title p {
+        margin-top: 12px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .profile-mark {
+        width: min(260px, 76vw);
+      }
     }
   </style>
 </head>
@@ -550,9 +592,12 @@
   <header>
     <div class="wrap nav">
       <a class="brand" href="#top" aria-label="Ally Stoltz LaBriola home">
-        <span class="brand-mark">ASL</span>
+        <span class="brand-mark">
+          <img src="https://images.squarespace-cdn.com/content/v1/5f24290fd0d0910ecab2b02e/1617860151811-MBUGHY1C45SQ19P1JX3M/Ally+Stoltz+LaBriola.png" alt="Ally Stoltz LaBriola" />
+        </span>
         <span>Ally Stoltz LaBriola</span>
       </a>
+
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#services">Services</a>
         <a href="#work">Work Samples</a>
@@ -566,18 +611,25 @@
       <div class="wrap hero-grid">
         <div>
           <div class="eyebrow"><span class="dot"></span> Technology + Tourism</div>
+
           <h1>Welcome! I’m glad you’re here.</h1>
+
           <p class="lead">I work at the intersection of technology and tourism, offering website work, graphic design, video production, and AI-powered solutions.</p>
+
           <p class="sublead">Need a second set of eyes to audit your website or explore how AI can help your company? Let’s talk.</p>
+
           <div class="cta-row">
-            <a class="btn primary" href="#contact">Schedule A Call</a>
+            <a class="btn primary" href="https://calendly.com/ally-labriola" target="_blank" rel="noopener">Schedule A Call</a>
             <a class="btn secondary" href="#work">See Work Samples</a>
             <a class="btn ghost" href="mailto:?subject=Intro%20Call%20with%20Ally">Send Me An Email</a>
           </div>
         </div>
 
         <aside class="profile-card" aria-label="Profile summary">
-          <div class="profile-mark" aria-hidden="true">ASL</div>
+          <div class="profile-mark">
+            <img src="https://images.squarespace-cdn.com/content/v1/5f24290fd0d0910ecab2b02e/1617860151811-MBUGHY1C45SQ19P1JX3M/Ally+Stoltz+LaBriola.png" alt="Headshot of Ally Stoltz LaBriola" />
+          </div>
+
           <h2>AI, websites, content, and creative support for tourism brands.</h2>
           <p>Custom chatbots, automated content, marketing tools, Shopify, Squarespace, design, video, PR, and social media.</p>
         </aside>
@@ -653,6 +705,7 @@
 
         <div class="category-block">
           <h3>Squarespace Website Builds</h3>
+
           <div class="client-list">
             <a class="client-pill" href="https://meaningfulmarketinghouse.com/" target="_blank" rel="noopener">Made Known Pictures</a>
             <a class="client-pill" href="https://meaningfulmarketinghouse.com/" target="_blank" rel="noopener">Adventures & Retreats</a>
@@ -667,6 +720,7 @@
 
         <div class="category-block">
           <h3>Shopify Store Site Builds – Ecommerce</h3>
+
           <div class="client-list">
             <a class="client-pill" href="https://meaningfulmarketinghouse.com/" target="_blank" rel="noopener">Pitkern Artisan Gallery</a>
             <a class="client-pill" href="https://meaningfulmarketinghouse.com/" target="_blank" rel="noopener">Bestowal Gifts</a>
@@ -675,6 +729,7 @@
 
         <div class="category-block">
           <h3>Video Editing + Basic Animation</h3>
+
           <div class="client-list">
             <a class="client-pill" href="https://meaningfulmarketinghouse.com/" target="_blank" rel="noopener">Year In Review Report Video — The Sigmund Project</a>
           </div>
@@ -682,6 +737,7 @@
 
         <div class="category-block">
           <h3>Graphic Design</h3>
+
           <div class="client-list">
             <a class="client-pill" href="https://meaningfulmarketinghouse.com/" target="_blank" rel="noopener">Tour Brochure — Pitcairn Islands Tourism Board</a>
             <a class="client-pill" href="https://meaningfulmarketinghouse.com/" target="_blank" rel="noopener">Recent Press Hits For Clients</a>
@@ -694,8 +750,11 @@
       <div class="wrap contact-grid">
         <div>
           <a href="#top" style="color: rgba(255,255,255,0.66); text-decoration:none; font-weight:900;">← Back</a>
+
           <h2>Let’s connect</h2>
+
           <p>Whether you’re looking for a Shopify or Squarespace site build, graphic design and video services, or a second set of eyes to audit your website, I’d love to hear more.</p>
+
           <a class="btn primary" href="mailto:?subject=Website%20or%20AI%20Project%20Inquiry">Send Me An Email</a>
         </div>
 
