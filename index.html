@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ally Stoltz LaBriola | Technology + Tourism</title>
+  <meta name="description" content="Website work, graphic design, video production, and AI-powered solutions for tourism and mission-driven organizations." />
+  <style>
+    :root {
+      --charcoal: #171717;
+      --soft-black: #222222;
+      --cream: #e8fbff;
+      --paper: #f7fdff;
+      --turquoise: #21c7c9;
+      --blue: #1769aa;
+      --muted: #6f6a61;
+      --line: rgba(23, 23, 23, 0.14);
+      --shadow: 0 18px 50px rgba(23, 23, 23, 0.13);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--charcoal);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(33, 199, 201, 0.24), transparent 34%),
+        linear-gradient(180deg, var(--cream) 0%, #ffffff 52%, var(--cream) 100%);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(1120px, calc(100% - 38px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(232, 251, 255, 0.86);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--blue), var(--turquoise));
+      color: white;
+      border: 2px solid var(--turquoise);
+      font-size: 13px;
+      font-weight: 950;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--soft-black);
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      opacity: 0.78;
+    }
+
+    .nav-links a:hover { opacity: 1; }
+
+    .hero {
+      padding: 84px 0 58px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.16fr 0.84fr;
+      gap: 46px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.58);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--turquoise);
+      box-shadow: 0 0 0 5px rgba(33, 199, 201, 0.22);
+    }
+
+    h1 {
+      margin: 22px 0 12px;
+      font-size: clamp(42px, 8vw, 86px);
+      line-height: 0.92;
+      letter-spacing: -0.07em;
+      color: #0b416c;
+    }
+
+    .lead {
+      font-size: clamp(18px, 2vw, 23px);
+      color: var(--soft-black);
+      max-width: 760px;
+      margin: 0 0 16px;
+    }
+
+    .sublead {
+      color: var(--muted);
+      max-width: 680px;
+      font-size: 17px;
+      margin: 0 0 28px;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 850;
+      border: 1px solid var(--charcoal);
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(23, 23, 23, 0.12);
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--turquoise), #7ee8e6);
+      color: #08324f;
+      border-color: rgba(8, 50, 79, 0.55);
+    }
+
+    .btn.secondary {
+      background: var(--blue);
+      color: white;
+      border-color: var(--blue);
+    }
+
+    .btn.ghost {
+      background: rgba(255, 255, 255, 0.7);
+      color: var(--charcoal);
+    }
+
+    .profile-card {
+      background: linear-gradient(145deg, #0b416c 0%, #1769aa 52%, #21c7c9 135%);
+      color: white;
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-card:before {
+      content: "";
+      position: absolute;
+      inset: -80px -80px auto auto;
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      background: var(--turquoise);
+      opacity: 0.28;
+    }
+
+    .profile-mark {
+      width: 100%;
+      max-width: 280px;
+      aspect-ratio: 1 / 1;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 24px;
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.13);
+      border: 5px solid rgba(33, 199, 201, 0.82);
+      position: relative;
+      z-index: 1;
+      font-size: clamp(58px, 8vw, 92px);
+      font-weight: 950;
+      letter-spacing: -0.09em;
+      color: white;
+    }
+
+    .profile-card h2 {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 8px;
+      font-size: 25px;
+      letter-spacing: -0.04em;
+    }
+
+    .profile-card p {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.76);
+    }
+
+    section { padding: 58px 0; }
+
+    .section-title {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(30px, 5vw, 54px);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+      margin: 0;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      max-width: 470px;
+      margin: 0;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .service {
+      padding: 18px 20px;
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      box-shadow: 0 10px 30px rgba(23, 23, 23, 0.05);
+    }
+
+    .service span { color: var(--blue); }
+
+    .highlight {
+      background: linear-gradient(145deg, #0b416c 0%, #1769aa 52%, #21c7c9 135%);
+      color: white;
+      border-radius: var(--radius);
+      padding: 34px;
+      margin-top: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .highlight h3 {
+      font-size: clamp(28px, 4vw, 42px);
+      margin: 0 0 8px;
+      letter-spacing: -0.05em;
+      line-height: 1;
+    }
+
+    .highlight p { color: rgba(255,255,255,0.76); margin: 0; }
+
+    .samples-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .sample-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      min-height: 190px;
+      box-shadow: 0 14px 35px rgba(23, 23, 23, 0.07);
+      text-decoration: none;
+      display: block;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .sample-card:hover,
+    .client-pill:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 38px rgba(23, 23, 23, 0.12);
+    }
+
+    .sample-card.featured {
+      background: linear-gradient(135deg, var(--charcoal), #313131);
+      color: white;
+    }
+
+    .tag {
+      display: inline-block;
+      background: rgba(33, 199, 201, 0.18);
+      color: var(--blue);
+      border: 1px solid rgba(33, 199, 201, 0.44);
+      padding: 5px 9px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 12px;
+    }
+
+    .featured .tag {
+      color: var(--charcoal);
+      background: var(--turquoise);
+      border-color: var(--turquoise);
+    }
+
+    .sample-card h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+    }
+
+    .sample-card p {
+      margin: 0 0 11px;
+      color: var(--muted);
+    }
+
+    .featured p { color: rgba(255,255,255,0.75); }
+
+    .client {
+      font-weight: 900;
+      color: var(--charcoal);
+    }
+
+    .featured .client { color: white; }
+
+    .solutions {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .solution {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.76);
+      border-radius: var(--radius);
+      padding: 23px;
+    }
+
+    .solution .num {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--turquoise);
+      font-weight: 950;
+      margin-bottom: 16px;
+    }
+
+    .solution h3 { margin: 0 0 8px; }
+    .solution p { color: var(--muted); margin: 0; }
+
+    .client-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .client-pill {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      padding: 16px;
+      font-weight: 850;
+      color: var(--charcoal);
+      text-decoration: none;
+      display: block;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .category-block {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .category-block h3 {
+      margin: 0 0 12px;
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+    }
+
+    .contact {
+      background: var(--charcoal);
+      color: white;
+      border-radius: 34px 34px 0 0;
+      padding: 64px 0;
+      margin-top: 48px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .contact h2 {
+      font-size: clamp(36px, 6vw, 66px);
+      line-height: 0.94;
+      letter-spacing: -0.07em;
+      margin: 0 0 14px;
+    }
+
+    .contact p {
+      color: rgba(255, 255, 255, 0.72);
+      margin: 0 0 22px;
+    }
+
+    form {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius);
+      padding: 22px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: 850;
+      margin-bottom: 7px;
+      color: rgba(255,255,255,0.78);
+    }
+
+    input, textarea {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.1);
+      color: white;
+      padding: 13px 14px;
+      margin-bottom: 14px;
+      font: inherit;
+      outline: none;
+    }
+
+    textarea { min-height: 130px; resize: vertical; }
+
+    input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.48); }
+
+    .send {
+      width: 100%;
+      border: 0;
+      cursor: pointer;
+      background: var(--turquoise);
+      color: var(--charcoal);
+      border-radius: 999px;
+      min-height: 48px;
+      font-weight: 950;
+      font-size: 15px;
+    }
+
+    footer {
+      padding: 24px 0;
+      background: var(--charcoal);
+      color: rgba(255,255,255,0.58);
+      font-size: 13px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 840px) {
+      .hero-grid,
+      .contact-grid,
+      .samples-grid,
+      .solutions,
+      .client-list,
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      .hero { padding-top: 54px; }
+      .section-title { display: block; }
+      .section-title p { margin-top: 12px; }
+      .nav-links { display: none; }
+      .profile-mark { max-width: 220px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Ally Stoltz LaBriola home">
+        <span class="brand-mark">ASL</span>
+        <span>Ally Stoltz LaBriola</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#work">Work Samples</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> Technology + Tourism</div>
+          <h1>Welcome! I’m glad you’re here.</h1>
+          <p class="lead">I work at the intersection of technology and tourism, offering website work, graphic design, video production, and AI-powered solutions.</p>
+          <p class="sublead">Need a second set of eyes to audit your website or explore how AI can help your company? Let’s talk.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="#contact">Schedule A Call</a>
+            <a class="btn secondary" href="#work">See Work Samples</a>
+            <a class="btn ghost" href="mailto:?subject=Intro%20Call%20with%20Ally">Send Me An Email</a>
+          </div>
+        </div>
+        <aside class="profile-card" aria-label="Profile summary">
+          <div class="profile-mark" aria-hidden="true">ASL</div>
+          <h2>AI, websites, content, and creative support for tourism brands.</h2>
+          <p>Custom chatbots, automated content, marketing tools, Shopify, Squarespace, design, video, PR, and social media.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Services</h2>
+          <p>Flexible creative and technical support for tourism, nonprofits, and small teams that need smart, practical execution.</p>
+        </div>
+        <div class="services">
+          <div class="service"><span>+</span> Artificial Intelligence Consulting</div>
+          <div class="service"><span>+</span> Website Builds + Rebuilds, Shopify + Squarespace</div>
+          <div class="service"><span>+</span> Brochure + Graphic Design</div>
+          <div class="service"><span>+</span> Video Editing + Basic Animation</div>
+          <div class="service"><span>+</span> Online Advertising</div>
+          <div class="service"><span>+</span> Public Relations</div>
+          <div class="service"><span>+</span> Social Media</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="wrap">
+        <div class="section-title">
+          <h2>Work Samples</h2>
+          <p>Human at heart, powered by AI.</p>
+        </div>
+
+        <div class="samples-grid">
+          <a class="sample-card featured" href="https://meaningfulmarketinghouse.com/" target="_blank" rel="noopener">
+            <span class="tag">AI Work Sample</span>
+            <h3>AI-generated keynote speaker</h3>
+            <p><strong>The Brief:</strong> Produce an AI-generated keynote speaker, including script, avatar, voice, and PowerPoint visuals for USTOA’s annual conference.</p>
+            <p class="client">Client: United States Tour Operators Association (USTOA)</p>
+          </a>
+          <a class="sample-card featured" href="https://meaningfulmarketinghouse.com/" target="_blank" rel="noopener">
+            <span class="tag">AI Work Sample</span>
+            <h3>Lifelike historical avatar</h3>
+            <p><strong>The Brief:</strong> Create a lifelike avatar for AAA from a 100-year-old photo that spoke and answered questions live.</p>
+            <p class="client">Client: American Automobile Association (AAA)</p>
+          </a>
+        </div>
+
+        <div class="highlight">
+          <h3>Want to use AI to supercharge your organization?</h3>
+          <p>From video avatars and photo avatars to interactive multilingual experiences, I help teams bring practical AI ideas to life.</p>
+        </div>
+
+        <div class="solutions">
+          <article class="solution">
+            <div class="num">1</div>
+            <h3>Video Avatars</h3>
+            <p>Lifelike, full-body avatars that speak, gesture, and express emotion. Use for course intros, CEO messages, campaign launches, fictional hosts, and immersive storytelling.</p>
+          </article>
+          <article class="solution">
+            <div class="num">2</div>
+            <h3>Photo Avatars</h3>
+            <p>Turn a single photo into a moving, talking avatar for social media snippets, internal updates, donor thank-yous, and quick video briefs.</p>
+          </article>
+          <article class="solution">
+            <div class="num">3</div>
+            <h3>Interactive Avatars</h3>
+            <p>Conversational avatars that answer questions, guide onboarding, offer demos, and support tourism, customer service, product, and nonprofit journeys. Available in 175+ languages.</p>
+          </article>
+        </div>
+
+        <div class="category-block">
+          <h3>Squarespace Website Builds</h3>
+          <div class="client-list">
+            <a class="client-pill" href="https://meaningfulmarketinghouse.com/" target="_blank" rel="noopener">Made Known Pictures</a>
+            <a class="client-pill" href="https://meaningfulmarketinghouse.com/" target="_blank" rel="noopener">Adventures & Retreats</a>
+            <a class="client-pill" href="https://meaningfulmarketinghouse.com/" target="_blank" rel="noopener">The Sigmund Project</a>
+            <a class="client-pill" href="https://meaningfulmarketinghouse.com/" target="_blank" rel="noopener">Pitcairn Islands Tourism</a>
+            <a class="client-pill" href="https://meaningfulmarketinghouse.com/" target="_blank" rel="noopener">The Lobiko Initiative</a>
+            <a class="client-pill" href="https://meaningfulmarketinghouse.com/" target="_blank" rel="noopener">Zip Zap Circus USA</a>
+            <a class="client-pill" href="https://meaningfulmarketinghouse.com/" target="_blank" rel="noopener">Richard Bangs</a>
+            <a class="client-pill" href="https://meaningfulmarketinghouse.com/" target="_blank" rel="noopener">Alan Elliott Merschen</a>
+          </div>
+        </div>
+
+        <div class="category-block">
+          <h3>Shopify Store Site Builds – Ecommerce</h3>
+          <div class="client-list">
+            <a class="client-pill" href="https://meaningfulmarketinghouse.com/" target="_blank" rel="noopener">Pitkern Artisan Gallery</a>
+            <a class="client-pill" href="https://meaningfulmarketinghouse.com/" target="_blank" rel="noopener">Bestowal Gifts</a>
+          </div>
+        </div>
+
+        <div class="category-block">
+          <h3>Video Editing + Basic Animation</h3>
+          <div class="client-list">
+            <a class="client-pill" href="https://meaningfulmarketinghouse.com/" target="_blank" rel="noopener">Year In Review Report Video — The Sigmund Project</a>
+          </div>
+        </div>
+
+        <div class="category-block">
+          <h3>Graphic Design</h3>
+          <div class="client-list">
+            <a class="client-pill" href="https://meaningfulmarketinghouse.com/" target="_blank" rel="noopener">Tour Brochure — Pitcairn Islands Tourism Board</a>
+            <a class="client-pill" href="https://meaningfulmarketinghouse.com/" target="_blank" rel="noopener">Recent Press Hits For Clients</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <a href="#top" style="color: rgba(255,255,255,0.66); text-decoration:none; font-weight:900;">← Back</a>
+          <h2>Let’s connect</h2>
+          <p>Whether you’re looking for a Shopify or Squarespace site build, graphic design and video services, or a second set of eyes to audit your website, I’d love to hear more.</p>
+          <a class="btn primary" href="mailto:?subject=Website%20or%20AI%20Project%20Inquiry">Send Me An Email</a>
+        </div>
+        <form action="mailto:?subject=Website%20or%20AI%20Project%20Inquiry" method="post" enctype="text/plain">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" />
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell me what you’re working on..."></textarea>
+
+          <button class="send" type="submit">SEND</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© Ally Stoltz LaBriola</span>
+      <span>Website work, AI support, design, video, PR, and social media</span>
+    </div>
+  </footer>
+</body>
+</html>
